@@ -1,0 +1,28 @@
+# Python environments and caches
+.venv/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Hardware-specific dependency
+01_data_acquisition/lib/*.jar
+
+# Newly acquired or processed experimental files
+01_data_acquisition/output/
+02_matlab_processing/output/
+
+# Recomputed models, results, and logs
+03_python_reproduction/outputs/
+
+# Common generated artifacts
+*.log
+*.tmp
+*.pdf
+*.png
