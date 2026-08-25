@@ -1,6 +1,6 @@
-# Fast-Deployment Passive RFID Temperature Sensing via One-Point Calibration
+# Fast-Deployable Passive RFID Temperature Sensing via Robust Persistence-Time Fusion and One-Point Calibration
 
-This repository contains the experimental code and versioned input data for the paper **Fast-Deployment Passive RFID Temperature Sensing via One-Point Calibration**. It supports from-scratch reproduction and contains no pretrained model JSON, expected-result archive, generated numerical result, log, or manuscript image.
+This repository contains the experimental code and versioned input data for the paper **Fast-Deployable Passive RFID Temperature Sensing via Robust Persistence-Time Fusion and One-Point Calibration**. It supports from-scratch reproduction and contains no pretrained model JSON, expected-result archive, generated numerical result, log, or manuscript image.
 
 ## Repository layout
 
