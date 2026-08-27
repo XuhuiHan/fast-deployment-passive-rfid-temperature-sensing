@@ -22,7 +22,15 @@ python -m pip install -r requirements.txt
 python run_all.py --jobs 8 --trials 30 --adapt-iters 80
 ```
 
-The command verifies input hashes, trains all eight candidate formulas, evaluates sliding-window fusion and one-point calibration, and compares the proposed method with the ThermoTag baseline. It generates models and numerical result tables only; manuscript plotting is intentionally outside this public reproduction package.
+The command verifies input hashes, trains all eight candidate formulas, evaluates sliding-window fusion and one-point calibration, and compares the proposed method with the ThermoTag baseline. It generates models and numerical result tables only; manuscript plotting is intentionally outside this reproduction package.
+
+After the full-method outputs have been generated, run the four calibration-constraint ablations with:
+
+```powershell
+python scripts/04_calibration_constraint_ablation.py --jobs 8 --trials 30 --adapt-iters 80
+```
+
+The ablation command reuses the generated full-method validation results, retrains the four ablated configurations, and writes its models, logs, validation results, and summaries under `03_python_reproduction/outputs/ablation/`.
 
 Runtime artifacts are created under:
 
@@ -32,6 +40,6 @@ Runtime artifacts are created under:
 03_python_reproduction/outputs/
 ```
 
-Fresh random search can select slightly different hyperparameters on a different platform. The public package reproduces the complete method rather than distributing the archived paper checkpoint.
+Fresh random search can select slightly different hyperparameters on a different platform. This package reproduces the complete method rather than distributing the archived paper checkpoint.
 
 The Impinj Octane SDK JAR is not redistributed. See `01_data_acquisition/lib/README.md`.
