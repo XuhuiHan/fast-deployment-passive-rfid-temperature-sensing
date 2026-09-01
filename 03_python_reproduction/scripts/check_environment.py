@@ -6,9 +6,7 @@ import sys
 
 EXPECTED_PYTHON = (3, 12, 13)
 EXPECTED_PACKAGES = {
-    "matplotlib": "3.11.1",
     "numpy": "2.3.5",
-    "openpyxl": "3.1.5",
     "pandas": "3.0.1",
     "scipy": "1.18.0",
     "torch": "2.13.0",

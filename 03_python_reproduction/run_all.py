@@ -17,6 +17,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--adapt-iters", type=int, default=80, help="Adaptation iterations during tuning (paper: 80).")
     parser.add_argument("--jobs", type=int, default=min(8, os.cpu_count() or 1), help="Parallel formula processes.")
     parser.add_argument("--skip-training", action="store_true", help="Reuse a model already generated under outputs/.")
+    parser.add_argument("--skip-window-selection", action="store_true", help="Skip the independent 30-tag window-length selection experiment.")
     parser.add_argument("--skip-sliding-window", action="store_true", help="Reuse existing sliding-window outputs.")
     parser.add_argument("--skip-input-check", action="store_true", help="Skip SHA-256 verification of input data.")
     return parser.parse_args()
@@ -35,6 +36,13 @@ def main() -> None:
     run_step("Verify Python environment", [sys.executable, "scripts/check_environment.py"], env)
     if not args.skip_input_check:
         run_step("Verify versioned input data", [sys.executable, "scripts/check_inputs.py"], env)
+
+    if not args.skip_window_selection:
+        run_step(
+            "Evaluate window lengths 1-10 on the independent 30-tag selection set",
+            [sys.executable, "scripts/00_window_length_selection.py"],
+            env,
+        )
 
     if not args.skip_training:
         run_step(

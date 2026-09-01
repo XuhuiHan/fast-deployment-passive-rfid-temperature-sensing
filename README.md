@@ -22,7 +22,7 @@ python -m pip install -r requirements.txt
 python run_all.py --jobs 8 --trials 30 --adapt-iters 80
 ```
 
-The command verifies input hashes, trains all eight candidate formulas, evaluates sliding-window fusion and one-point calibration, and compares the proposed method with the ThermoTag baseline. It generates models and numerical result tables only; manuscript plotting is intentionally outside this reproduction package.
+The command verifies input hashes, evaluates window lengths 1-10 on the independent C101-C130 selection set, trains all eight candidate formulas, evaluates sliding-window fusion and one-point calibration, and compares the proposed method with the ThermoTag baseline. It generates models and numerical result tables only; manuscript plotting is intentionally outside this reproduction package.
 
 After the full-method outputs have been generated, run the four calibration-constraint ablations with:
 

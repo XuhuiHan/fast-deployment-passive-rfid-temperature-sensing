@@ -5,6 +5,7 @@ This folder contains versioned experimental inputs and the numerical method code
 ## Numerical entry points
 
 - `scripts/train_all_models.py`: train all eight candidate formulas.
+- `scripts/00_window_length_selection.py`: evaluate window lengths 1-10 on the independent C101-C130 selection set.
 - `scripts/01_sliding_window_vs_thermotag.py`: evaluate sliding-window fusion.
 - `scripts/02_one_point_calibration_regularized.py`: evaluate one-point calibration and construct the ThermoTag-style baseline by averaging the separately fitted `a`, `b`, and `c` parameters of learning tags C250-C282.
 - `scripts/03_compare_one_point_calibration_with_thermotag.py`: export the matched comparison with the ThermoTag baseline.
@@ -20,7 +21,7 @@ python scripts/check_inputs.py
 python run_all.py --jobs 8 --trials 30 --adapt-iters 80
 ```
 
-`run_all.py` trains a model under `outputs/offline_training/` and writes evaluation tables under `outputs/results/`.
+`run_all.py` trains a model under `outputs/offline_training/` and writes the window-selection and evaluation tables under `outputs/results/`.
 
 After `run_all.py` completes, run the ablations from this directory:
 
